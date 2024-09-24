@@ -19,5 +19,9 @@ obs.: organizar ainda
 
 ![3_3delete](https://github.com/user-attachments/assets/04702714-7c3f-4eb1-b1e5-91e5bc69b994)
 
-![4_putERRO ](https://github.com/user-attachments/assets/f5bb1c3d-5e3d-4da2-8a10-c5f359ed3172)
+![4_1putGET](https://github.com/user-attachments/assets/62de23dd-fe95-43f9-b5f8-6fafcafbcc81)
+
+![4_2_1PUTUP](https://github.com/user-attachments/assets/4a2fb3a9-8782-432c-93d1-e4dc267d54be)
+![4_3putgetAutalizado](https://github.com/user-attachments/assets/e2d304f8-57cb-4b26-a788-8d09fb1cda18)
+
 
