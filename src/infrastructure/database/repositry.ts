@@ -19,4 +19,24 @@ export class Repository implements AnimalsRepository{
         return this.animals.length< compriment;
     }
 
+    update(id: string, bodyParams: Partial<Animals>): Animals | null {
+        const animalToUpdate = this.animals.find(animal => animal.id === id);
+    
+        if (animalToUpdate) {
+            const updatedAnimal = { 
+                ...animalToUpdate, 
+                ...bodyParams 
+            };
+    
+            const index = this.animals.findIndex(animal => animal.id === id);
+            this.animals[index] = updatedAnimal;
+    
+            return updatedAnimal;
+        }
+        
+        return null;
+    
+    }
+    
+
 }

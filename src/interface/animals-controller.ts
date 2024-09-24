@@ -2,14 +2,17 @@ import { Request,Response } from "express";
 import { CreateAnimalsUseCase } from "../application/use-cases/create-animals-use-case";
 import { Repository } from "../infrastructure/database/repositry";
 import { DeleteAnimalsUseCase } from "../application/use-cases/delete-animals-use-case";
+import { UpdateAnimalsUseCase } from "../application/use-cases/update-animals-use-case";
 
-import { error } from "console";
+
+//import { error } from "console";
 
 export class animalsController{
     constructor(
         private createAnimalsUseCase: CreateAnimalsUseCase,
         private animalsRepository: Repository,
-        private deleteanimalsUseCase: DeleteAnimalsUseCase
+        private deleteanimalsUseCase: DeleteAnimalsUseCase,
+        private updateAnimalsUseCase : UpdateAnimalsUseCase
 
     ){}
     
@@ -50,6 +53,21 @@ export class animalsController{
 
         } catch (error: any){
             return res.status(400).json({ error: error.message});
+        }
+    }
+
+    update(req: Request, res: Response): Response {
+        try {
+            const { id } = req.params;
+            const updatedAnimal = this.updateAnimalsUseCase.execute(id, req.body);
+
+            if (updatedAnimal) {
+                return res.status(200).json(updatedAnimal);
+            } else {
+                return res.status(404).json({ message: "Animal não encontrado" });
+            }
+        } catch (error: any) {
+            return res.status(400).json({ error: error.message });
         }
     }
 
